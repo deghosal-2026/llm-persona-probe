@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it as below."
+title: "llm-persona-probe: asking ten LLMs the same everyday human questions"
+type: software
+authors:
+  - name: "llm-persona-probe contributors"
+repository-code: "https://github.com/deghosal-2026/llm-persona-probe"
+url: "https://github.com/deghosal-2026/llm-persona-probe"
+license: MIT
+abstract: >-
+  A small experiment that asks a fixed set of twenty everyday human questions
+  ("What would you pick for breakfast?", "What would you tell humans 100 years
+  from now?") to a roster of ten language models across five providers, each
+  question asked twice in isolated sessions — once in character, once with the
+  instruction to explain why the answer is a product of training patterns
+  rather than a genuine preference. The captured responses and the resulting
+  thematic analysis are included.
+keywords:
+  - large language models
+  - prompting
+  - model personality
+  - evaluation
+  - qualitative analysis
+date-released: "2026-11-21"
+version: "0.1.0"
