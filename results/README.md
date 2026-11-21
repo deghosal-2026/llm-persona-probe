@@ -14,6 +14,7 @@ results/
     EXPECTATIONS_AND_SURPRISES.md
     MODEL_DIVERGENCE.md
     HOW_THEY_ARE_NOT_HUMAN.md
+    EXTRA_FINDINGS.md
 ```
 
 **Rule of thumb:** `raw/` and `index.jsonl` are machine output — regenerate them
