@@ -155,6 +155,38 @@ and `analytical.json`/`analytical.md` — plus one row per call in
 If the six answers look right, the flow works — run the full matrix the same
 way, just without the `--model` filter.
 
+### Run the whole matrix — one paste, model by model
+
+The full matrix is 10 models × 20 questions × 2 framings = **400 calls**. Each
+model is fully independent (its own folder, its own calls), so the loop goes
+cheapest-first — validate the flow at pennies before flagship rates apply.
+Put your real key in the first line, paste the whole block, and walk away:
+
+```bash
+export OPENROUTER_API_KEY=sk-or-...        # your real key, once
+
+for m in deepseek/deepseek-v4-pro openai/gpt-oss-120b anthropic/claude-haiku-5.5 \
+         google/gemini-4-hydrogen moonshotai/kimi-k3.1-pro anthropic/claude-sonnet-5.5 \
+         openai/gpt-6.2-sol google/gemini-4-carbon anthropic/claude-fable-5.2 \
+         openai/gpt-6.2-astra; do
+  python3 run_probe.py --model "$m" --yes || break      # run this model (40 calls)
+  python3 run_probe.py --verify --model "$m" || break   # check it — free, offline
+done
+python3 run_probe.py --verify                          # whole 400-call matrix — free
+```
+
+- **If anything stops the loop** (rate limit, balance, Ctrl-C), the final
+  verify tells you exactly what is missing. Fix nothing — paste the **same
+  block** again: completed models print "nothing to do" for free, and it
+  resumes where it stopped. Failures and truncations retry automatically;
+  answered pairs are never re-paid.
+- Drop `--yes` from the run line if you want a per-model plan + spend ceiling
+  + confirmation instead (then it is not walk-away).
+- Pairs already answered (like the pilot's six) are skipped for free.
+- When the last line prints `ALL CHECKS PASSED`: the data is done — run the
+  analysis prompt (see [`docs/CUSTOMIZATION.md`](CUSTOMIZATION.md)) **once**,
+  on all 400 answers, to fill `results/synthesis/`.
+
 Useful flags:
 
 | Flag | Meaning |

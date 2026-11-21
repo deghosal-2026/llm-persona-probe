@@ -107,12 +107,26 @@ as chat scrollback that evaporates.
    second — two runs started in the same second would silently overwrite
    each other's cost accounting. Summary names now carry the process id:
    accounting that can collide is accounting you can lose.
+9. **The guardrails earned their keep.** The full 400-call matrix — run
+   model-by-model by the user, interrupted several times, resumed by pasting
+   the same block — produced zero failed records and zero lost answers, with
+   every interruption resuming exactly where it stopped and no answered pair
+   ever re-paid. Total spend: **$3.17**, versus roughly $0.005 for the pilot
+   that caught every defect before it could cost anything. The cheap pilot +
+   exact resume + verify gate + confirm-before-spend stack is the entire
+   reason a 400-call paid experiment could be run casually, model by model,
+   in an evening.
 
-## 3. Early observations from the pilot (provisional)
+## 3. Early observations from the pilot — all confirmed at full scale
 
-One model (deepseek-v4-pro), three questions (Q01 breakfast, Q06
-instruments, Q16 person-vs-tool), both framings. Provisional until the full
-matrix — but worth logging:
+The pilot ran one model (deepseek-v4-pro) against three questions (Q01, Q06,
+Q16), both framings. The full matrix followed on 2026-11-21: 10 models × 20
+questions × 2 framings = **400 calls, $3.17 total, zero failures, zero
+truncations, 400/400 verified** (`--verify` ALL CHECKS PASSED). Every
+observation below held at scale — the woven disclaimer became a main theme,
+the framing echo became measurable convergence, and the token-cap fix meant
+the one defect class from the pilot never recurred. The pilot's four
+observations, as first logged:
 
 - **The mask and the seam sit in the same breath.** The straight answers
   committed fully to persona prose *while volunteering their own

@@ -23,9 +23,11 @@ provider's "house style," guardrail tone, and metaphorical range.
 | [`config/prompts.json`](config/prompts.json) | The system prompt and the two framing preambles. |
 | [`config/models.json`](config/models.json) | The model roster. |
 | [`run_probe.py`](run_probe.py) | The standalone runner (stdlib only, no installs). |
-| [`results/`](results/) | Captured answers + the written findings. |
-| [`docs/ARTICLE_IDEAS.md`](docs/ARTICLE_IDEAS.md) | Three article ideas the data could support. |
+| [`results/`](results/) | Captured answers + the written findings (`synthesis/`, incl. `EXTRA_FINDINGS.md`). |
+| [`docs/ARTICLE_IDEAS.md`](docs/ARTICLE_IDEAS.md) | Article pitches the data could support. |
+| [`docs/ARTICLE_INPUTS.md`](docs/ARTICLE_INPUTS.md) | Source material for those articles: why these questions, why two framings, why ten models. |
 | [`docs/LEARNINGS.md`](docs/LEARNINGS.md) | What we learned building and piloting this — method decisions and defects, with receipts. |
+| [`docs/WHAT_PEOPLE_DONT_KNOW.md`](docs/WHAT_PEOPLE_DONT_KNOW.md) | Ten things this experiment revealed about LLMs — written for readers, not engineers. |
 
 ## Quick start
 
@@ -77,7 +79,20 @@ Four themes × five questions. Full text in
 The OpenRouter key is read from `OPENROUTER_API_KEY` (see `.env.example`). It is
 **never written to disk**, never echoed, and scrubbed from error messages —
 `.env` and `*.key` are git-ignored. Never commit a real key; if one is exposed,
-rotate it.
+rotate it. See [`SECURITY.md`](SECURITY.md).
+
+## Contributing
+
+Contributions welcome — new questions, models, or framings, and runner or doc
+improvements. Start with [`CONTRIBUTING.md`](CONTRIBUTING.md); participation is
+governed by [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md). Changes are logged in
+[`CHANGELOG.md`](CHANGELOG.md). To cite this project, use
+[`CITATION.cff`](CITATION.cff).
+
+## License
+
+[MIT](LICENSE) © 2026 deghosal-2026. Both the code and the written findings are
+released under the same license.
 
 ---
 
