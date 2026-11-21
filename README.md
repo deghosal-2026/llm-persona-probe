@@ -1,5 +1,14 @@
 # llm-persona-probe
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+[![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](run_probe.py)
+[![Models: 10](https://img.shields.io/badge/models-10-blueviolet.svg)](config/models.json)
+[![Questions: 20](https://img.shields.io/badge/questions-20-informational.svg)](questions/questions.json)
+[![Matrix cost: $3.17](https://img.shields.io/badge/matrix%20cost-%243.17-success.svg)](results/synthesis/FINDINGS.md)
+[![Runs: 400](https://img.shields.io/badge/runs-400-lightgrey.svg)](results/index.jsonl)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 Asking a bunch of LLMs the same ordinary human questions — and reading the
 answers together.
 
