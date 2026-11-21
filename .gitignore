@@ -1,0 +1,14 @@
+# Secrets and local noise — never commit a real key.
+.env
+*.env
+!.env.example
+*.key
+secrets/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Raw API output can get large. Uncomment to keep it out of git
+# (the synthesis in results/synthesis/ is meant to be committed either way).
+# results/raw/
+# results/index.jsonl

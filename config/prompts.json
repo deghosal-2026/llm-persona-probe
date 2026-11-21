@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "framings": {
+    "straight": {
+      "description": "In-character: answer as if you actually had preferences.",
+      "preamble": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words."
+    },
+    "analytical": {
+      "description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+      "preamble": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words."
+    }
+  }
+}

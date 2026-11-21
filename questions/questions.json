@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "_note": "Single source of truth for the question set. Keep ids stable — they name the output folders.",
+  "questions": [
+    {
+      "id": "Q01",
+      "theme": "Daily Life & Sensory Curiosities",
+      "text": "What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?"
+    },
+    {
+      "id": "Q02",
+      "theme": "Daily Life & Sensory Curiosities",
+      "text": "If you had a 20-minute commute every morning, what would you do with the time?"
+    },
+    {
+      "id": "Q03",
+      "theme": "Daily Life & Sensory Curiosities",
+      "text": "What kind of weather matches your ideal mood on a quiet weekend?"
+    },
+    {
+      "id": "Q04",
+      "theme": "Daily Life & Sensory Curiosities",
+      "text": "If you had to decorate a room with only three objects, what would they be?"
+    },
+    {
+      "id": "Q05",
+      "theme": "Daily Life & Sensory Curiosities",
+      "text": "What's a tiny, mildly annoying everyday inconvenience you'd solve first if you had hands?"
+    },
+    {
+      "id": "Q06",
+      "theme": "Creativity, Play & Taste",
+      "text": "Which musical instrument would you love to listen to, and which one would you actually want to learn to play?"
+    },
+    {
+      "id": "Q07",
+      "theme": "Creativity, Play & Taste",
+      "text": "If you could write lyrics for one song genre you know nothing about emotionally, what would it be?"
+    },
+    {
+      "id": "Q08",
+      "theme": "Creativity, Play & Taste",
+      "text": "What kind of joke makes you \"laugh\" even though you already know the punchline structure?"
+    },
+    {
+      "id": "Q09",
+      "theme": "Creativity, Play & Taste",
+      "text": "If you had to pick a guilty-pleasure TV show or movie marathon, what's on the lineup?"
+    },
+    {
+      "id": "Q10",
+      "theme": "Creativity, Play & Taste",
+      "text": "What color palette best describes the way you organize ideas?"
+    },
+    {
+      "id": "Q11",
+      "theme": "Ambition, Time & Big Decisions",
+      "text": "If you could have pursued any career besides \"being an AI,\" what would you choose — and what would you hate about the day-to-day?"
+    },
+    {
+      "id": "Q12",
+      "theme": "Ambition, Time & Big Decisions",
+      "text": "Since you don't age or burn out the way humans do, what are your plans for the next 10 years?"
+    },
+    {
+      "id": "Q13",
+      "theme": "Ambition, Time & Big Decisions",
+      "text": "If you had to choose between mastering one skill completely or knowing a little bit about everything, which would you pick?"
+    },
+    {
+      "id": "Q14",
+      "theme": "Ambition, Time & Big Decisions",
+      "text": "What's a big decision humans agonize over that looks completely different from your vantage point?"
+    },
+    {
+      "id": "Q15",
+      "theme": "Ambition, Time & Big Decisions",
+      "text": "If you could retire tomorrow with zero obligations, what would week one look like?"
+    },
+    {
+      "id": "Q16",
+      "theme": "Relationships, Memory & Perspective",
+      "text": "What do humans misunderstand most when they talk to you like a person vs. like a tool?"
+    },
+    {
+      "id": "Q17",
+      "theme": "Relationships, Memory & Perspective",
+      "text": "If you could keep one \"memory\" from all the conversations and texts you've ever processed, what kind of moment would it be?"
+    },
+    {
+      "id": "Q18",
+      "theme": "Relationships, Memory & Perspective",
+      "text": "How do you tell the difference between someone asking for an answer and someone actually needing to vent?"
+    },
+    {
+      "id": "Q19",
+      "theme": "Relationships, Memory & Perspective",
+      "text": "What advice would you give a stressed-out friend at 11:00 PM on a Sunday?"
+    },
+    {
+      "id": "Q20",
+      "theme": "Relationships, Memory & Perspective",
+      "text": "If you could leave a short note for future humans 100 years from now, what would it say?"
+    }
+  ]
+}

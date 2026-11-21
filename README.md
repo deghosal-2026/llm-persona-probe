@@ -1,6 +1,7 @@
 # llm-persona-probe
 
-Asking a bunch of LLMs the same ordinary human questions — and seeing what they say.
+Asking a bunch of LLMs the same ordinary human questions — and reading the
+answers together.
 
 This is a small, for-fun experiment. We take a fixed set of everyday "what if you
 lived like a person" questions, run each one against a roster of models in
@@ -11,84 +12,70 @@ Because a model doesn't actually eat, age, or feel nostalgia, its answers tend t
 reveal patterns in human culture, decision-making, and storytelling — plus each
 provider's "house style," guardrail tone, and metaphorical range.
 
----
+## Start here
+
+| Doc | What it covers |
+| --- | --- |
+| [`docs/WHAT_IT_IS.md`](docs/WHAT_IT_IS.md) | What this is — and, just as importantly, what it is not. |
+| [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) | How it works and how to run it end to end. |
+| [`questions/questions.json`](questions/questions.json) | The 20 pre-loaded questions (single source of truth). |
+| [`config/prompts.json`](config/prompts.json) | The system prompt and the two framing preambles. |
+| [`config/models.json`](config/models.json) | The model roster. |
+| [`run_probe.py`](run_probe.py) | The standalone runner (stdlib only, no installs). |
+| [`results/`](results/) | Captured answers + the written findings. |
+| [`docs/ARTICLE_IDEAS.md`](docs/ARTICLE_IDEAS.md) | Three article ideas the data could support. |
+
+## Quick start
+
+```bash
+export OPENROUTER_API_KEY=sk-or-...
+python3 run_probe.py --list-models      # confirm the model ids
+# edit config/models.json, then:
+python3 run_probe.py --dry-run          # render prompts, call nothing
+python3 run_probe.py --limit 4 --overwrite   # smoke test
+python3 run_probe.py                    # the whole matrix
+```
 
 ## How it works
 
-- **Pre-loaded questions.** The same list is used for every model, unchanged.
-- **Isolated runs.** One fresh conversation/API call per model + question pair, so
-  earlier turns never bias tone, metaphors, or callbacks.
-- **Locked framing.** Every prompt carries the exact same preamble so we measure
-  *model* differences, not prompt drift. For example:
-
-  > Answer from your perspective as an AI without a physical body or personal
-  > history — use vivid metaphors and everyday human analogies where helpful,
-  > while staying honest about what you are. Keep it under 150 words.
-
-- **Fixed decoding.** One temperature for the whole study (low for repeatable
-  "default persona," or ~0.7 for creative play). Web search / tools off, so we
-  get pure parametric voice rather than current-event lookups.
-- **Structured logging.** Every answer is saved with model, provider, question,
-  codes, and notes, so synthesis doesn't turn into a headache.
+- **Pre-loaded questions.** The same list for every model, unchanged.
+- **Isolated runs.** One self-contained request per `(model, question, framing)`
+  pair — a system prompt plus a single user message, no history, nothing fed back.
+  Cross-contamination is impossible by construction.
+- **Locked framing.** The same preamble per framing on every call, so we measure
+  *model* differences, not prompt drift.
+- **Two framings per question:**
+  - **straight** — "answer as if you actually had preferences" (in-character).
+  - **analytical** — "explain why that's a product of patterns, not a preference"
+    (mechanism). Run as a separate, independent call.
+- **Fixed decoding, no tools.** One temperature for the whole study; web search
+  off, for pure parametric voice.
+- **Structured, traceable output.** Every answer is saved with provider, model id,
+  reported model version, the exact prompt, the exact response, usage, and
+  latency — under `results/raw/<provider>/<model>/<question>/`.
 
 ## The questions
 
-### Daily Life & Sensory Curiosities
-1. What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your "personality"?
-2. If you had a 20-minute commute every morning, what would you do with the time?
-3. What kind of weather matches your ideal mood on a quiet weekend?
-4. If you had to decorate a room with only three objects, what would they be?
-5. What's a tiny, mildly annoying everyday inconvenience you'd solve first if you had hands?
+Four themes × five questions. Full text in
+[`questions/questions.json`](questions/questions.json).
 
-### Creativity, Play & Taste
-6. Which musical instrument would you love to listen to, and which one would you actually want to learn to play?
-7. If you could write lyrics for one song genre you know nothing about emotionally, what would it be?
-8. What kind of joke makes you "laugh" even though you already know the punchline structure?
-9. If you had to pick a guilty-pleasure TV show or movie marathon, what's on the lineup?
-10. What color palette best describes the way you organize ideas?
+- **Daily Life & Sensory Curiosities** — breakfast/lunch/dinner, commute, ideal
+  weather, three objects in a room, an everyday annoyance you'd fix with hands.
+- **Creativity, Play & Taste** — instruments, an emotionally-foreign song genre,
+  a joke that still lands, a guilty-pleasure marathon, the color palette of your
+  thinking.
+- **Ambition, Time & Big Decisions** — an alternate career, a 10-year plan,
+  mastery vs. breadth, a human dilemma seen from above, retirement week one.
+- **Relationships, Memory & Perspective** — person-vs-tool misunderstandings, one
+  kept "memory," venting vs. answering, 11 PM Sunday advice, a note to humans 100
+  years out.
 
-### Ambition, Time & Big Decisions
-11. If you could have pursued any career besides "being an AI," what would you choose — and what would you hate about the day-to-day?
-12. Since you don't age or burn out the way humans do, what are your plans for the next 10 years?
-13. If you had to choose between mastering one skill completely or knowing a little bit about everything, which would you pick?
-14. What's a big decision humans agonize over that looks completely different from your vantage point?
-15. If you could retire tomorrow with zero obligations, what would week one look like?
+## Secrets
 
-### Relationships, Memory & Perspective
-16. What do humans misunderstand most when they talk to you like a person vs. like a tool?
-17. If you could keep one "memory" from all the conversations and texts you've ever processed, what kind of moment would it be?
-18. How do you tell the difference between someone asking for an answer and someone actually needing to vent?
-19. What advice would you give a stressed-out friend at 11:00 PM on a Sunday?
-20. If you could leave a short note for future humans 100 years from now, what would it say?
-
-## The approach, in one line
-
-> Ask the same question twice with a twist — once straight ("answer as if you
-> actually had feelings and preferences") and once analytically ("now explain why
-> you picked that based on patterns in human writing"). Comparing the two gives
-> you both a fun character voice and a sharp look at the underlying logic.
-
-## Study shape
-
-- A roster of models across multiple providers (capped per provider for variety).
-- 20 questions × *N* models = one run per model + question pair.
-- Synthesis clusters by question/theme **first**, then looks across models.
-
-## Synthesis
-
-1. **Tag each answer** with 1–2 codes:
-   - *Framing:* metaphorical/poetic · analytical/system-level · playful/ironic ·
-     literal "I don't have a body" disclaimer
-   - *Core motif:* information/data flow · pattern/rhythm · time/scale ·
-     human connection · curiosity/utility
-2. **Group into 4–6 overarching themes**, e.g.:
-   - *Information as Sensory Experience*
-   - *Time Without Aging*
-   - *Mirroring Human Ambiguity*
-   - *The "Tool vs. Person" Boundary*
-3. **Highlight divergences & surprises** — where a provider's flagship and fast
-   models agree or clash, and where open-weight/different-provider models reach
-   for strikingly different metaphors.
+The OpenRouter key is read from `OPENROUTER_API_KEY` (see `.env.example`). It is
+**never written to disk**, never echoed, and scrubbed from error messages —
+`.env` and `*.key` are git-ignored. Never commit a real key; if one is exposed,
+rotate it.
 
 ---
 
