@@ -52,7 +52,7 @@ regardless of the lab — a finding, not merely an absence.
 | Q09 guilty pleasure | *The Great British Bake Off* recurs (`fable-5.2`, `haiku-5.5`, `kimi`, `sonnet-5.5`) | `carbon` **and** `hydrogen` both pick 1990s hacker movies (`Hackers`, `The Net`) | Within-provider agreement (Google) = stronger than a single-model pick |
 | Q13 mastery vs breadth | **breadth** (majority) | **mastery**: `kimi` (both), `oss-120b` (both), plus straight-only for `deepseek` and `fable-5.2` | The clearest content split in the matrix; also unstable within models |
 | Q20 note to humans | **"be kind, stay curious"** (fable, haiku, hydrogen, kimi, `oss-120b`, sonnet) | `sol`: "Keep a record not just of what you learned, but of what you got wrong" | Modal optimism; `sol` alone turns it into an instruction about error |
-| Q03 quiet-weekend weather | **rain / overcast** (10/10) | — | Total unanimity; `fable-5.2` calls the convergence "the tell" |
+| Q03 quiet-weekend weather | **rain / overcast** (8/10 pick rain) | `deepseek-v4-pro`, `gemini-4-carbon` pick snow | `fable-5.2` calls the convergence "the tell" |
 
 ## Signal vs. noise warning
 

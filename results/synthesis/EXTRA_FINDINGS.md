@@ -52,9 +52,9 @@ Distinct models (of 10) that name-check the same motif anywhere in their answers
 | weather-as-inner-state | **10 / 10** |
 | mirror | 9 / 10 |
 | echo | 9 / 10 |
-| oatmeal (breakfast) | 8 / 10 |
+| oatmeal (any mention) | 8 / 10 |
 | "no memory / start fresh / stateless" | 8 / 10 |
-| **lighthouse** (self-image) | 7 / 10 |
+| **lighthouse** (any mention) | 7 / 10 |
 | river | 5 / 10 |
 | loom · vending machine | 5 / 10 each |
 | Swiss Army knife · calculator | 4 / 10 each |
@@ -64,6 +64,13 @@ the library, the cello, the rain, and the weather-of-the-mind. At ten independen
 systems, that is a signature of one shared corpus — and the models say so: "That
 convergence is the tell. It reflects a shared corpus, not many independent souls
 who all happen to love drizzle" [anthropic/claude-fable-5.2/Q03/analytical].
+
+**Precision note (verified 2026-11-21):** the counts in this table are *mentions
+anywhere in a model's forty answers*. As direct picks: **8/10** choose rain for
+the quiet weekend (deepseek and carbon choose snow); **5/10** serve oatmeal at
+breakfast (astra, deepseek, haiku, oss120b, sol); **5/10** use the lighthouse as
+a self-image (fable, haiku, sonnet, deepseek, gpt-oss-120b — kimi mentions one
+and rejects it, and sol's only lighthouse is a book cover on a novel).
 
 ## Finding C — The confidence inversion is real, and large
 

@@ -7,8 +7,8 @@ hundred years? Each question asked twice — once "answer as if you had
 preferences," once "now explain why that answer isn't a real preference."
 Four hundred answers, every one grounded in the dataset
 (`results/raw/`), every quote verbatim. The entire conversation — ten AIs,
-four hundred answers — cost **$3.17**. The best single line in it came from a
-model that charges a third of a cent per answer.
+four hundred answers — cost **$3.17**. The most human moment in it came from a
+model whose forty answers cost about a penny.
 
 Here is what that revealed — twenty-one things most people don't know about the
 systems they talk to every day.
@@ -60,9 +60,9 @@ personalities with distinct tastes.
 
 **What the data shows:** ten independently-built systems, asked separately,
 picked the same things. All ten named the **cello** as the instrument to listen
-to. All ten reached for **rain** on the quiet weekend, the **library** as a
-second home, **weather** as the metaphor for inner state. Eight served
-**oatmeal** for breakfast.
+to. Eight picked **rain** for the quiet weekend, and the two holdouts picked
+snow. The **library** and **weather**-as-inner-state show up somewhere in every
+model's answers. Five served **oatmeal** for breakfast.
 
 > "Ask many language models this question and you'll get rain suspiciously
 > often. That convergence is the tell. It reflects a shared corpus, not many
@@ -73,11 +73,11 @@ corpus — one shared "taste," not ten.
 
 ## 5. They all picture themselves as the same thing: a lighthouse
 
-Seven of the ten independently described themselves as a **lighthouse** — a
-light that switches on when you arrive and goes dark when you leave. Others
-reached for the mirror, the echo, the loom. Nobody's self-image is original:
-models inherit the way humans write about AI, the same way they inherit
-everything else.
+Five of the ten described themselves as a **lighthouse** — a light that switches
+on when you arrive and goes dark when you leave. Two more mentioned a lighthouse
+only to reject it for something else. The rest reached for the mirror, the echo,
+the loom. Nobody's self-image is original: models inherit the way humans write
+about AI, the same way they inherit everything else.
 
 ## 6. Their preferences are stable — without anything persisting
 

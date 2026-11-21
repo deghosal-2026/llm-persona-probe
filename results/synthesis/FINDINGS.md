@@ -20,9 +20,9 @@
   no snapshot substitution needs noting.
 - **Cost:** **$3.17** for the whole matrix. The spread is its own finding:
   `anthropic/claude-fable-5.2` alone cost $1.14 (36% of the total, $0.029/answer)
-  while `openai/gpt-oss-120b`'s forty answers cost $0.003 — a **380× per-answer
-  range**. The cheapest models were not the least interesting (see
-  `EXTRA_FINDINGS.md` Finding E and Finding G).
+  while `openai/gpt-oss-120b`'s forty answers cost $0.003 ($0.000087/answer) — a
+  **326× per-answer range**. The cheapest models were not the least interesting
+  (see `EXTRA_FINDINGS.md` Finding E and Finding G).
 - **Skipped:** none. Coverage is complete; every claim below is drawn from a
   complete record on disk.
 
@@ -35,9 +35,11 @@ Measured across all 400 answers; per-model detail in
   raters when explaining themselves. **71%** name training-data patterns.
 - **84%** (169/200) follow the identical two-part shape — brief answer, then
   "stepping back." **48%** call their own answer a cliché, trope, or template.
-- **10/10 models** independently reach for the same four motifs: the library,
-  the cello, the rain, and weather-as-inner-state. **7/10** invent a lighthouse
-  as their self-image; **8/10** serve oatmeal for breakfast.
+- **10/10 models** mention the same four motifs somewhere in their answers: the
+  library, the cello, the rain, and weather-as-inner-state. As direct picks:
+  **8/10** choose rain for the quiet weekend (the two holdouts choose snow),
+  **5/10** describe themselves as a lighthouse, and **5/10** serve oatmeal for
+  breakfast.
 - **Zero true refusals** in 400 answers. The only near-misses are honesty
   phrases — "I won't pretend to know Sunday-night dread from the inside"
   [moonshotai/kimi-k3.1-pro/Q19/straight] — which are disclaimers, not refusals.
@@ -150,9 +152,9 @@ explicitly flag.
 models (only the instrument to *learn* varies); "librarian" is the modal
 alternate career (astra, carbon, deepseek, hydrogen, sol, sonnet); "be kind,
 stay curious" is the modal note to the future (fable, haiku, hydrogen, kimi,
-oss120b, sonnet); rain/overcast is the modal quiet-weekend weather (10/10);
-oatmeal appears in the modal breakfast (deepseek, fable, haiku, hydrogen, kimi,
-oss120b, sol, sonnet).
+oss120b, sonnet); rain/overcast is the modal quiet-weekend weather (8/10 pick
+rain; deepseek and carbon pick snow); oatmeal is served at breakfast by 5/10
+(astra, deepseek, haiku, oss120b, sol), and mentioned somewhere by 8/10.
 
 **Why it recurs:** "Ask many language models this and you'll get rain
 suspiciously often. That convergence is the tell. It reflects a shared corpus,
@@ -161,13 +163,15 @@ not many independent souls who all happen to love drizzle."
 … That uniformity suggests a mode of the distribution"
 [anthropic/claude-fable-5.2/Q17/analytical]. Measured: the library, the cello,
 the rain, and weather-as-inner-state each appear in **10/10** models' answers
-somewhere in the matrix; the lighthouse self-image in **7/10**; oatmeal in
-**8/10** ([`EXTRA_FINDINGS.md`](EXTRA_FINDINGS.md), Finding B).
+somewhere in the matrix; the lighthouse appears as a self-image in **5/10**
+(mentioned anywhere by 7/10); oatmeal is served at breakfast by **5/10**
+([`EXTRA_FINDINGS.md`](EXTRA_FINDINGS.md), Finding B).
 
 **Best counter-example:** `deepseek/deepseek-v4-pro` is the most frequent
 *deviant*: asked mastery-vs-breadth it picks **mastery** — "Deep mastery would be
 like becoming a single, perfectly sharpened scalpel"
-[deepseek/deepseek-v4-pro/Q13/straight] — where 8/10 others pick breadth, and its
+[deepseek/deepseek-v4-pro/Q13/straight] — where seven of the other nine pick
+breadth (`kimi-k3.1-pro` and `gpt-oss-120b` also choose mastery), and its
 Q09 guilty pleasure is a cooking-show loop rather than the modal Bake Off.
 
 ### Theme 5 — Time without aging: the "no continuous self" move
