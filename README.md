@@ -18,12 +18,14 @@ provider's "house style," guardrail tone, and metaphorical range.
 | --- | --- |
 | [`docs/WHAT_IT_IS.md`](docs/WHAT_IT_IS.md) | What this is — and, just as importantly, what it is not. |
 | [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) | How it works and how to run it end to end. |
+| [`docs/CUSTOMIZATION.md`](docs/CUSTOMIZATION.md) | Tailoring questions, roster, runs — and the final analysis prompt. |
 | [`questions/questions.json`](questions/questions.json) | The 20 pre-loaded questions (single source of truth). |
 | [`config/prompts.json`](config/prompts.json) | The system prompt and the two framing preambles. |
 | [`config/models.json`](config/models.json) | The model roster. |
 | [`run_probe.py`](run_probe.py) | The standalone runner (stdlib only, no installs). |
 | [`results/`](results/) | Captured answers + the written findings. |
 | [`docs/ARTICLE_IDEAS.md`](docs/ARTICLE_IDEAS.md) | Three article ideas the data could support. |
+| [`docs/LEARNINGS.md`](docs/LEARNINGS.md) | What we learned building and piloting this — method decisions and defects, with receipts. |
 
 ## Quick start
 

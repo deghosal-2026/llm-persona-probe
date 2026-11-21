@@ -21,8 +21,9 @@ COST SAFEGUARDS (spend is the enemy)
 2. Model ids are verified against the live catalog (a free, keyless GET /models)
    before any spend; unknown ids abort the run. Opt out with --skip-verify.
 3. Resume is free and exact. A pair whose saved record parses, has a non-empty
-   response, and has no error is NEVER re-called. Incomplete or failed records
-   are retried automatically next run at no extra scope.
+   response, has no error, and was not truncated is NEVER re-called.
+   Incomplete, failed, or truncated records are retried automatically next
+   run at no extra scope.
 4. --overwrite is the only way to redo a successful answer, and the plan states
    loudly how many already-paid-for answers it would redo.
 5. Writes are atomic (temp file + rename), so a killed run can never leave a
@@ -31,6 +32,9 @@ COST SAFEGUARDS (spend is the enemy)
 7. Every run writes results/sessions/<id>.json with token and cost totals, and
    the run ends by printing actual tokens used and (when OpenRouter reports it)
    the actual cost.
+8. --verify is the after-run gate: an offline integrity check over the results
+   (completeness, exact prompts, verbatim .md, index coverage) — free, keyless,
+   no spend.
 
 SECRETS
 -------
@@ -43,6 +47,7 @@ USAGE
 -----
     export OPENROUTER_API_KEY=sk-or-...
     python3 run_probe.py --dry-run          # plan offline: no key, no network, no spend
+    python3 run_probe.py --verify           # after-run integrity check: free, offline
     python3 run_probe.py --list-models      # print current OpenRouter model ids
     python3 run_probe.py --limit 4 --yes    # smoke test: at most 4 NEW calls
     python3 run_probe.py --only Q01,Q02    # subset of questions
@@ -308,8 +313,10 @@ def append_jsonl(path: Path, obj: Any) -> None:
 
 
 def is_complete(json_path: Path) -> bool:
-    """A pair counts as done ONLY if its record parses, has a response, and has no error.
-    Anything else (missing, corrupt, failed, empty) is retried on the next run."""
+    """A pair counts as done ONLY if its record parses, has a response, has no
+    error, and was not truncated (reasoning models can burn the token cap on
+    thinking). Anything else (missing, corrupt, failed, empty, truncated) is
+    retried on the next run."""
     if not json_path.exists():
         return False
     try:
@@ -318,7 +325,11 @@ def is_complete(json_path: Path) -> bool:
         return False
     if not isinstance(obj, dict):
         return False
-    return bool(obj.get("response_text")) and not obj.get("error")
+    if not obj.get("response_text") or obj.get("error"):
+        return False
+    if obj.get("truncated") or obj.get("finish_reason") == "length":
+        return False
+    return True
 
 
 def response_markdown(rec: dict[str, Any]) -> str:
@@ -366,6 +377,101 @@ def response_markdown(rec: dict[str, Any]) -> str:
 
 
 # --------------------------------------------------------------------------- #
+# After-run verification (offline integrity gate)
+# --------------------------------------------------------------------------- #
+
+def verify_results(
+    runs: list[dict[str, Any]],
+    complete_flags: list[bool],
+    pair_paths: Any,
+    system_prompt: str,
+    framings_cfg: dict[str, Any],
+    index_path: Path,
+    sessions_root: Path,
+) -> int:
+    """Offline integrity gate over the results directory.
+
+    Checks, per pair: record parses and is complete; the user prompt is
+    byte-exact framing preamble + question; the system prompt matches config;
+    the reported model matches the request; the .md exists and contains the
+    response verbatim; the run appears in index.jsonl. No network, no key,
+    no spend. Exit 0 = all clear; exit 1 = problems listed.
+    """
+    problems: list[str] = []
+    stats = {"prompt": 0, "system": 0, "model": 0, "md": 0, "index": 0}
+
+    index_ids: set[str] = set()
+    if index_path.exists():
+        for ln, line in enumerate(index_path.read_text(encoding="utf-8").splitlines(), 1):
+            if not line.strip():
+                continue
+            try:
+                index_ids.add(str(json.loads(line).get("run_id")))
+            except json.JSONDecodeError:
+                problems.append(f"index.jsonl line {ln}: does not parse")
+    else:
+        problems.append("index.jsonl missing (no run has been recorded yet)")
+
+    for run, done in zip(runs, complete_flags):
+        m, q, framing = run["model"], run["question"], run["framing"]
+        label = f"{m['model']} · {q.get('id')} · {framing}"
+        jp, mp = pair_paths(run)
+        if not done:
+            problems.append(f"incomplete (auto-retries next run): {label}")
+            continue
+        try:
+            rec = json.loads(jp.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            problems.append(f"record unreadable: {label} ({exc})")
+            continue
+        preamble = framings_cfg[framing].get("preamble", "").strip()
+        expected_user = f"{preamble}\n\nQuestion:\n{(q.get('text') or '').strip()}"
+        if rec.get("user_prompt") == expected_user:
+            stats["prompt"] += 1
+        else:
+            problems.append(f"user_prompt not exact framing+question: {label}")
+        if rec.get("system_prompt") == system_prompt:
+            stats["system"] += 1
+        else:
+            problems.append(f"system prompt differs from config: {label}")
+        if str(rec.get("model_reported") or "").startswith(m["model"].split(":")[0]):
+            stats["model"] += 1
+        else:
+            problems.append(
+                f"model_reported={rec.get('model_reported')!r} for requested {m['model']}: {label}")
+        if mp.exists() and (rec.get("response_text") or "") in mp.read_text(encoding="utf-8"):
+            stats["md"] += 1
+        else:
+            problems.append(f".md missing or not verbatim: {label}")
+        if str(rec.get("run_id")) in index_ids:
+            stats["index"] += 1
+        else:
+            problems.append(f"missing from index.jsonl: {label}")
+
+    n_done = sum(complete_flags)
+    print(f"verify: {n_done}/{len(runs)} pairs complete · prompt exact {stats['prompt']} · "
+          f"system constant {stats['system']} · routing sane {stats['model']} · "
+          f"md verbatim {stats['md']} · indexed {stats['index']}")
+
+    sfiles = sorted(sessions_root.glob("*.json")) if sessions_root.exists() else []
+    if n_done and not sfiles:
+        problems.append("records exist but no session summary found")
+    for sf in sfiles:
+        try:
+            json.loads(sf.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            problems.append(f"session summary unreadable: {sf.name} ({exc})")
+
+    if problems:
+        print(f"verify: {len(problems)} problem(s):")
+        for p in problems:
+            print(f"  - {p}")
+        return 1
+    print("verify: ALL CHECKS PASSED")
+    return 0
+
+
+# --------------------------------------------------------------------------- #
 # Main
 # --------------------------------------------------------------------------- #
 
@@ -396,7 +502,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
                    help="cap on NEW API calls, counted after already-answered pairs are skipped (0 = no cap)")
     p.add_argument("--temperature", type=float, default=0.7,
                    help="sampling temperature (default: 0.7; try 0.3 for 'default persona')")
-    p.add_argument("--max-tokens", type=int, default=700)
+    p.add_argument("--max-tokens", type=int, default=3000,
+                   help="answer token cap; reasoning models spend this budget on thinking too (default 3000)")
     p.add_argument("--timeout", type=int, default=90)
     p.add_argument("--retries", type=int, default=2,
                    help="retries per call on 429/5xx/network errors (default: 2)")
@@ -414,6 +521,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
                    help="skip live model-id verification and the cost estimate (not recommended)")
     p.add_argument("--dry-run", action="store_true",
                    help="plan offline: print what would be called/skipped, touch nothing")
+    p.add_argument("--verify", action="store_true",
+                   help="offline integrity gate over the results; no key, no network, no spend")
     p.add_argument("--list-models", action="store_true",
                    help="print current OpenRouter model ids and exit")
     return p.parse_args(argv)
@@ -479,7 +588,7 @@ def main(argv: list[str]) -> int:
     raw_root = out_root / "raw"
     index_path = out_root / "index.jsonl"
     sessions_root = out_root / "sessions"
-    session_id = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+    session_id = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime()) + f"-{os.getpid()}"
 
     # The full matrix.
     runs: list[dict[str, Any]] = [
@@ -497,6 +606,10 @@ def main(argv: list[str]) -> int:
 
     complete_flags = [is_complete(pair_paths(r)[0]) for r in runs]
     n_complete = sum(complete_flags)
+
+    if args.verify:
+        return verify_results(runs, complete_flags, pair_paths, system_prompt,
+                              framings_cfg, index_path, sessions_root)
 
     # ------------------------------------------------------------------ #
     # Dry run: plan only. No key, no network, no writes.

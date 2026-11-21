@@ -122,15 +122,21 @@ python3 run_probe.py --framings straight --yes
 
 # 4. The whole matrix: prints per-model call counts + a spend ceiling, then asks.
 python3 run_probe.py
+
+# 5. After any run: free offline integrity check of everything produced
+#    (respects --model/--only/--framings like everything else).
+python3 run_probe.py --verify
 ```
 
-### Example: one LLM, three questions
+### Example: test the flow — one cheap model, three questions
 
-The smallest useful run — one model, three questions, both framings
-(straight + analytical). Exactly **6 calls**:
+The smallest real run, on the roster's cheapest slot (DeepSeek): one model,
+three questions, both framings (straight + analytical). Exactly **6 calls**,
+about **a cent** at current catalog prices — enough to verify the whole
+pipeline without paying flagship rates:
 
 ```bash
-python3 run_probe.py --model anthropic/claude-fable-5.2 --only Q01,Q06,Q16 --yes
+python3 run_probe.py --model deepseek/deepseek-v4-pro --only Q01,Q06,Q16 --yes
 ```
 
 - `--model` — picks roster ids as they appear in `config/models.json`
@@ -141,16 +147,20 @@ python3 run_probe.py --model anthropic/claude-fable-5.2 --only Q01,Q06,Q16 --yes
   analytical as two isolated calls.
 
 Drop `--yes` to get the plan and an interactive confirmation instead. Results
-land in `results/raw/anthropic/anthropic-claude-fable-5-2/` — one folder per
+land in `results/raw/deepseek/deepseek-deepseek-v4-pro/` — one folder per
 question (`q01/`, `q06/`, `q16/`), each holding `straight.json`/`straight.md`
 and `analytical.json`/`analytical.md` — plus one row per call in
 `results/index.jsonl` and a session summary in `results/sessions/`.
+
+If the six answers look right, the flow works — run the full matrix the same
+way, just without the `--model` filter.
 
 Useful flags:
 
 | Flag | Meaning |
 | --- | --- |
 | `--dry-run` | Print what would be called/skipped; zero API calls, zero writes, no key needed |
+| `--verify` | Offline integrity gate over results: completeness, exact prompts, verbatim .md, index coverage |
 | `--list-models` | Print current OpenRouter model ids and exit (keyless) |
 | `--yes` | Skip the spend confirmation (required with no interactive terminal) |
 | `--only Q01,Q02` | Restrict to a comma-list of question ids |
@@ -158,6 +168,7 @@ Useful flags:
 | `--framings straight,analytical` | Which framings to run (default: both) |
 | `--limit N` | Cap **NEW** calls, counted after already-answered pairs are skipped |
 | `--temperature 0.3` | Sampling temperature (default 0.7) |
+| `--max-tokens 3000` | Answer token cap — reasoning models spend it on thinking too (default 3000) |
 | `--overwrite` | Redo successful answers too — the only way to re-spend on a pair |
 | `--skip-verify` | Skip live id verification and the spend estimate |
 | `--sleep 0.5` | Pause between calls, in seconds |
