@@ -3,6 +3,21 @@
 Everything here is plain Python 3 (3.9+) with **no dependencies**. There is
 nothing to install beyond a Python interpreter and an OpenRouter API key.
 
+## Quick start
+
+Two steps — set the environment variable, run the script:
+
+```bash
+export OPENROUTER_API_KEY=sk-or-...   # 1. set the key in your shell
+python3 run_probe.py                  # 2. run the probe
+```
+
+New here? Do a free rehearsal first: `python3 run_probe.py --dry-run` prints
+exactly which calls would be made, writes nothing, and needs no key. The real
+run prints its plan — per-model call counts and an estimated spend ceiling — and
+asks for confirmation before spending anything. Pass `--yes` to skip the prompt
+(required when there is no interactive terminal).
+
 ---
 
 ## 1. The mental model
@@ -70,62 +85,108 @@ To compare models fairly, the *input* must be constant:
 
 ## 5. Setup
 
-```bash
-# from the repo root
-cp .env.example .env        # then put your key in .env (or just export it)
-export OPENROUTER_API_KEY=sk-or-...
+One environment variable — that is the whole setup:
 
-python3 run_probe.py --list-models > /tmp/openrouter_models.txt   # see what's live
+```bash
+# from the repo root — the key lives in your shell, never in a committed file
+export OPENROUTER_API_KEY=sk-or-...
 ```
 
-Then open `config/models.json`, replace the example slugs with real ids from that
-list, and mark each `"verified": true`. The runner prints a warning for any
-enabled model still marked `verified: false`.
+Prefer a file? `cp .env.example .env`, put the key in `.env`, then load it with
+`set -a; . ./.env; set +a`. `.env` is git-ignored, and the key is never written
+into any result file either way.
+
+The roster (`config/models.json`) ships with live, verified ids. To re-check
+them or pick different models (keyless, free):
+
+```bash
+python3 run_probe.py --list-models > /tmp/openrouter_models.txt
+```
+
+Edit `config/models.json` to swap ids or set `"enabled": false` to bench a
+model. The runner re-verifies every id against the live catalog before any paid
+call and aborts on anything it does not recognize.
 
 ## 6. Running
 
 ```bash
-# 1. Render every prompt without spending a cent or touching the network.
+# 1. See the plan first — free, keyless, no calls made, nothing written.
 python3 run_probe.py --dry-run
 
-# 2. Small end-to-end smoke test.
-python3 run_probe.py --limit 4 --overwrite
+# 2. Optional smoke test: at most 4 NEW calls, no confirmation prompt.
+python3 run_probe.py --limit 4 --yes
 
-# 3. One question, both framings, one framing pass only, etc.
-python3 run_probe.py --only Q01,Q17
-python3 run_probe.py --framings straight
+# 3. Subsets: one question, one framing, etc.
+python3 run_probe.py --only Q01,Q17 --yes
+python3 run_probe.py --framings straight --yes
 
-# 4. The whole matrix.
+# 4. The whole matrix: prints per-model call counts + a spend ceiling, then asks.
 python3 run_probe.py
 ```
+
+### Example: one LLM, three questions
+
+The smallest useful run — one model, three questions, both framings
+(straight + analytical). Exactly **6 calls**:
+
+```bash
+python3 run_probe.py --model anthropic/claude-fable-5.2 --only Q01,Q06,Q16 --yes
+```
+
+- `--model` — picks roster ids as they appear in `config/models.json`
+  (comma-separate several); the other nine are ignored, nothing to edit.
+- `--only Q01,Q06,Q16` — breakfast, instruments, person-vs-tool; swap in any ids
+  from `questions/questions.json`.
+- Framings default to **both**, so each question is asked straight and
+  analytical as two isolated calls.
+
+Drop `--yes` to get the plan and an interactive confirmation instead. Results
+land in `results/raw/anthropic/anthropic-claude-fable-5-2/` — one folder per
+question (`q01/`, `q06/`, `q16/`), each holding `straight.json`/`straight.md`
+and `analytical.json`/`analytical.md` — plus one row per call in
+`results/index.jsonl` and a session summary in `results/sessions/`.
 
 Useful flags:
 
 | Flag | Meaning |
 | --- | --- |
-| `--dry-run` | Build and print prompts; make zero API calls, write nothing |
-| `--list-models` | Print current OpenRouter model ids and exit |
+| `--dry-run` | Print what would be called/skipped; zero API calls, zero writes, no key needed |
+| `--list-models` | Print current OpenRouter model ids and exit (keyless) |
+| `--yes` | Skip the spend confirmation (required with no interactive terminal) |
 | `--only Q01,Q02` | Restrict to a comma-list of question ids |
-| `--framings straight,analytical` | Which framings to run |
-| `--limit N` | Cap total API calls (great for smoke tests) |
-| `--temperature 0.3` | Sampling temperature |
-| `--overwrite` | Redo answers that already exist |
+| `--model ID1,ID2` | Restrict to a comma-list of roster model ids |
+| `--framings straight,analytical` | Which framings to run (default: both) |
+| `--limit N` | Cap **NEW** calls, counted after already-answered pairs are skipped |
+| `--temperature 0.3` | Sampling temperature (default 0.7) |
+| `--overwrite` | Redo successful answers too — the only way to re-spend on a pair |
+| `--skip-verify` | Skip live id verification and the spend estimate |
+| `--sleep 0.5` | Pause between calls, in seconds |
+| `--retries 2` | Retries per call on 429/5xx/network errors |
 | `--out DIR` | Write somewhere other than `results/` |
 
-**Resume is automatic:** a run whose output file already exists is skipped unless
-you pass `--overwrite`. So you can stop and restart freely.
+**Resume is automatic and exact:** a pair is skipped only if its saved record
+parses, has a non-empty response, and has no error. Failed, empty, or corrupt
+records are retried automatically on the next run — `--overwrite` is the only way
+to redo a success, and the plan prints how many paid answers it would redo. All
+writes are atomic, so a Ctrl-C can never leave a record that looks done but
+isn't. Stop and restart freely; you never pay for the same answer twice.
+
+**Cost accounting:** every run writes `results/sessions/<session-id>.json` —
+calls planned/ok/failed, tokens in and out, and the cost OpenRouter reported —
+and prints the same totals when it finishes.
 
 ## 7. Where results land
 
 ```
 results/
   raw/
-    <provider>/<model>/<question-id>/
-      straight.json        # full record: provider, model, version, prompt, response, usage…
+    <provider>/<model-id-slug>/<question-id>/
+      straight.json        # full record: provider, model, reported version, prompt, response, usage…
       straight.md          # same thing, human-readable
       analytical.json
       analytical.md
   index.jsonl              # append-only, one JSON record per completed call
+  sessions/<session-id>.json   # per-run summary: calls ok/failed, tokens, cost
   synthesis/               # the written findings (see below)
 ```
 
@@ -162,9 +223,12 @@ The `results/synthesis/` folder holds the write-ups. The workflow:
 
 | Symptom | Fix |
 | --- | --- |
-| `no API key` | `export OPENROUTER_API_KEY=...` (or use `.env`). |
+| `no API key` | `export OPENROUTER_API_KEY=...` (see Quick start). |
+| `refusing to spend` | No `--yes` and no interactive terminal — review the `--dry-run` plan, then pass `--yes`. |
+| `unknown model id(s)` | A roster id isn't in the live catalog — re-check with `--list-models`, fix `config/models.json`. |
 | `HTTP 404` on a model | The slug is wrong or retired — run `--list-models` and fix `config/models.json`. |
 | `HTTP 401/403` | Key is wrong or lacks credit. |
-| `HTTP 429` | Rate limited — the runner retries with backoff; lower concurrency (run fewer `--only` questions) if it persists. |
-| All runs skipped | Answers already exist. Add `--overwrite`. |
+| `HTTP 429` | Rate limited — the runner retries with backoff; add `--sleep 0.5` or run fewer questions at once. |
+| Exit 1, some pairs `FAILED` | Expected after partial failures — re-run the same command; failures are retried automatically. |
+| "nothing to do — all pairs already answered" | Everything succeeded earlier. Only `--overwrite` re-runs (and re-pays). |
 | `model_reported` differs from `model_requested` | OpenRouter routed to a snapshot. The record keeps both; note it in the synthesis. |

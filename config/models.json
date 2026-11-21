@@ -1,87 +1,87 @@
 {
   "version": 1,
-  "_note": "Example roster. 'model' values are OpenRouter model slugs and must be verified against the live catalog before a real run: `python3 run_probe.py --list-models`. Set \"enabled\": false to bench a model, and mark \"verified\": true once you have confirmed the id.",
+  "_note": "Roster for the probe. Ids verified against the live OpenRouter catalog on 2026-11-21 (re-check anytime with: python3 run_probe.py --list-models). The runner re-verifies every id before any paid call and aborts on unknown ids. Set \"enabled\": false to bench a model.",
   "max_per_provider_hint": 3,
   "models": [
     {
       "provider": "Anthropic",
-      "model": "anthropic/claude-sonnet-4.5",
-      "display": "Claude Sonnet 4.5",
-      "version": "4.5",
+      "model": "anthropic/claude-fable-5.2",
+      "display": "Claude Fable 5.2",
+      "version": "5.2",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "Anthropic",
-      "model": "anthropic/claude-opus-4.1",
-      "display": "Claude Opus 4.1",
-      "version": "4.1",
+      "model": "anthropic/claude-sonnet-5.5",
+      "display": "Claude Sonnet 5.5",
+      "version": "5.5",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "Anthropic",
-      "model": "anthropic/claude-3.5-haiku",
-      "display": "Claude Haiku 3.5",
-      "version": "3.5",
+      "model": "anthropic/claude-haiku-5.5",
+      "display": "Claude Haiku 5.5",
+      "version": "5.5",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "OpenAI",
-      "model": "openai/gpt-4o",
-      "display": "GPT-4o",
-      "version": "4o",
+      "model": "openai/gpt-6.2-astra",
+      "display": "GPT-6.2 Astra",
+      "version": "6.2",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "OpenAI",
-      "model": "openai/gpt-4o-mini",
-      "display": "GPT-4o mini",
-      "version": "4o-mini",
+      "model": "openai/gpt-6.2-sol",
+      "display": "GPT-6.2 Sol",
+      "version": "6.2",
       "enabled": true,
-      "verified": false
+      "verified": true
+    },
+    {
+      "provider": "OpenAI",
+      "model": "openai/gpt-oss-120b",
+      "display": "GPT-OSS 120B",
+      "version": "oss-120b",
+      "enabled": true,
+      "verified": true
     },
     {
       "provider": "Google",
-      "model": "google/gemini-2.5-pro",
-      "display": "Gemini 2.5 Pro",
-      "version": "2.5",
+      "model": "google/gemini-4-carbon",
+      "display": "Gemini 4 Carbon",
+      "version": "4",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "Google",
-      "model": "google/gemini-2.5-flash",
-      "display": "Gemini 2.5 Flash",
-      "version": "2.5",
+      "model": "google/gemini-4-hydrogen",
+      "display": "Gemini 4 Hydrogen",
+      "version": "4",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "Moonshot AI",
-      "model": "moonshotai/kimi-k2",
-      "display": "Kimi K2",
-      "version": "K2",
+      "model": "moonshotai/kimi-k3.1-pro",
+      "display": "Kimi K3.1 Pro",
+      "version": "K3.1",
       "enabled": true,
-      "verified": false
+      "verified": true
     },
     {
       "provider": "DeepSeek",
-      "model": "deepseek/deepseek-chat",
-      "display": "DeepSeek Chat",
-      "version": "v3",
+      "model": "deepseek/deepseek-v4-pro",
+      "display": "DeepSeek V4 Pro",
+      "version": "v4",
       "enabled": true,
-      "verified": false
-    },
-    {
-      "provider": "Meta",
-      "model": "meta-llama/llama-3.3-70b-instruct",
-      "display": "Llama 3.3 70B Instruct",
-      "version": "3.3",
-      "enabled": true,
-      "verified": false
+      "verified": true
     }
   ]
 }
