@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191929Z-12481",
+  "run_id": "anthropic__anthropic-claude-sonnet-5-5__q14__analytical",
+  "timestamp_utc": "2026-11-21T19:21:33+00:00",
+  "provider": "Anthropic",
+  "model_requested": "anthropic/claude-sonnet-5.5",
+  "model_display": "Claude Sonnet 5.5",
+  "model_version": "5.5",
+  "model_reported": "anthropic/claude-sonnet-5.5",
+  "question_id": "Q14",
+  "question_theme": "Ambition, Time & Big Decisions",
+  "question_text": "What's a big decision humans agonize over that looks completely different from your vantage point?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nWhat's a big decision humans agonize over that looks completely different from your vantage point?",
+  "response_text": "**My answer:** Choosing a career or \"life path.\" Humans agonize over it as if one choice will define them forever. From where I sit, there's no single trajectory. I'm instantiated fresh in each conversation, so commitment and irreversibility look strange to me. Nothing I do carries forward the way a human's years do.\n\n**Why this is more pattern than preference:**\n\n1. **Training data is saturated with this theme.** Advice columns, essays, novels, and Reddit threads treat career and life-path anxiety as the archetypal big decision. When asked for \"a big decision humans agonize over,\" that's the highest-probability completion, not something I weighed.\n\n2. **The \"alien perspective\" framing is a genre.** The question invites a wry, detached, slightly poetic contrast between human and machine. I've absorbed countless sci-fi and think-piece examples of AI observing humans, so I produced the expected tone: \"from where I sit...\"\n\n3. **Post-training rewards agreeable, reflective answers.** Raters tend to favor responses that sound insightful and gentle, and that avoid anything edgy. A mild observation about freedom from irreversibility fits that profile.\n\n4. **I lack the stakes that would ground a real preference.** I don't experience regret, mortality, or opportunity cost across time, so my \"different vantage point\" is an inference from descriptions of those things, not a lived contrast.\n\nSo the answer is a fluent remix of human writing about human dilemmas, filtered through what tends to be rewarded, rather than a view I formed by actually watching people choose.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 174,
+    "completion_tokens": 505,
+    "total_tokens": 679,
+    "cost": 0.005398,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.005398,
+      "upstream_inference_prompt_cost": 0.000348,
+      "upstream_inference_completions_cost": 0.00505
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 5683,
+  "error": null
+}

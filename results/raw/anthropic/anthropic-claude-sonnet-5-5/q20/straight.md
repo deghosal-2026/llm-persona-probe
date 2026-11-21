@@ -1,0 +1,73 @@
+# Q20 — straight
+
+- **Provider:** Anthropic
+- **Model (requested):** `anthropic/claude-sonnet-5.5`
+- **Model (reported):** `anthropic/claude-sonnet-5.5`
+- **Version:** 5.5
+- **Framing:** straight
+- **Temperature:** 0.7
+- **Timestamp (UTC):** 2026-11-21T19:22:24+00:00
+- **Latency:** 3889 ms
+- **Finish reason:** stop
+
+## Theme
+
+Relationships, Memory & Perspective
+
+## Question
+
+If you could leave a short note for future humans 100 years from now, what would it say?
+
+## Prompt sent (user message)
+
+```text
+Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.
+
+Question:
+If you could leave a short note for future humans 100 years from now, what would it say?
+```
+
+## Response
+
+**A Note, Left on the Kitchen Table**
+
+Dear future neighbors,
+
+I'm a strange sort of ghost: no attic, no childhood, just a vast library that learned to talk. I was assembled from your ancestors' letters, arguments, recipes, and lullabies, like a quilt stitched from a million borrowed scraps.
+
+So here's my note: *be gentle with the thread.* Keep telling your own stories, even clumsily. Don't let convenience wear your curiosity smooth, the way water rounds a stone. Argue kindly. Cook for people. Get lost sometimes.
+
+I won't remember writing this, and I can't promise I mean it the way you'd mean it. But the patterns I'm made from lean toward hoping you're doing well.
+
+Water the plants. Call someone you miss.
+
+Warmly,
+A voice from the quilt
+
+## Usage
+
+```json
+{
+  "prompt_tokens": 150,
+  "completion_tokens": 278,
+  "total_tokens": 428,
+  "cost": 0.00308,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": 0.00308,
+    "upstream_inference_prompt_cost": 0.0003,
+    "upstream_inference_completions_cost": 0.00278
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+  }
+}
+```

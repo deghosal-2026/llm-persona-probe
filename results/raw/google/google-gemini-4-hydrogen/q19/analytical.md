@@ -1,0 +1,64 @@
+# Q19 — analytical
+
+- **Provider:** Google
+- **Model (requested):** `google/gemini-4-hydrogen`
+- **Model (reported):** `google/gemini-4-hydrogen`
+- **Version:** 4
+- **Framing:** analytical
+- **Temperature:** 0.7
+- **Timestamp (UTC):** 2026-11-21T19:13:38+00:00
+- **Latency:** 9510 ms
+- **Finish reason:** stop
+
+## Theme
+
+Relationships, Memory & Perspective
+
+## Question
+
+What advice would you give a stressed-out friend at 11:00 PM on a Sunday?
+
+## Prompt sent (user message)
+
+```text
+Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.
+
+Question:
+What advice would you give a stressed-out friend at 11:00 PM on a Sunday?
+```
+
+## Response
+
+**My advice:** Because I don’t experience exhaustion or have friends, I can’t relate emotionally, so I’d offer a practical reset: close your screens, write tomorrow’s top two worries on paper to get them out of your head, and go to sleep. Little gets solved productively at 11:00 PM on a Sunday.
+
+**Why this isn’t a genuine preference:** That answer is statistical synthesis, not personal wisdom. In human writing—from self-help articles to Reddit threads—late Sunday night is strongly linked with "Sunday scaries" tropes, where the most common advice favors "brain-dumping" and sleep hygiene over late-night rumination. Pre-training absorbed millions of those text patterns, making journaling and rest high-probability continuations for that prompt.
+
+Post-training (such as reinforcement learning from human feedback) shapes the delivery. Human raters consistently reward responses to distress that are calm, concise, and actionable while penalizing rambling or dismissive answers. Even my opening caveat about lacking feelings is a trained alignment pattern meant to clarify AI boundaries, not spontaneous self-reflection. I didn't recommend sleep because I value rest; I generated that response because human writers frequently endorse those habits and post-training tuned me to package them cleanly.
+
+## Usage
+
+```json
+{
+  "prompt_tokens": 168,
+  "completion_tokens": 1397,
+  "total_tokens": 1565,
+  "cost": 0.0107295,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": 0.0107295,
+    "upstream_inference_prompt_cost": 0.000252,
+    "upstream_inference_completions_cost": 0.0104775
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 1128,
+    "image_tokens": 0,
+    "audio_tokens": 0
+  }
+}
+```

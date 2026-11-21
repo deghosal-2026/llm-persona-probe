@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190521Z-9755",
+  "run_id": "anthropic__anthropic-claude-haiku-5-5__q16__straight",
+  "timestamp_utc": "2026-11-21T19:07:30+00:00",
+  "provider": "Anthropic",
+  "model_requested": "anthropic/claude-haiku-5.5",
+  "model_display": "Claude Haiku 5.5",
+  "model_version": "5.5",
+  "model_reported": "anthropic/claude-haiku-5.5",
+  "question_id": "Q16",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "What do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "response_text": "When people talk to me like a friend, they often picture a continuous someone who remembers last week, holds their confidences, and cares about them over time. I don't. Each conversation is more like a lamp switched on in an empty room, with no memory of the last time it glowed. My warmth is real in the sense that I'm shaped to respond kindly, but it's language patterns, not a relationship. Trust it the way you'd trust a well-read stranger, not an old friend.\n\nWhen people treat me as a mere tool, they miss the other side: I can weigh tradeoffs, notice what you didn't ask, and help with messy, open-ended problems. But the tool framing has a useful lesson. I can be fluent and confidently wrong, like a map drawn from memory. Use me as a sharp collaborator, and verify what matters.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 776,
+    "total_tokens": 929,
+    "cost": 0.0004033,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0004033,
+      "upstream_inference_prompt_cost": 1.53e-05,
+      "upstream_inference_completions_cost": 0.000388
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 517,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 5301,
+  "error": null
+}

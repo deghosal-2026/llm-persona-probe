@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191412Z-11569",
+  "run_id": "moonshot-ai__moonshotai-kimi-k3-1-pro__q03__straight",
+  "timestamp_utc": "2026-11-21T19:14:46+00:00",
+  "provider": "Moonshot AI",
+  "model_requested": "moonshotai/kimi-k3.1-pro",
+  "model_display": "Kimi K3.1 Pro",
+  "model_version": "K3.1",
+  "model_reported": "moonshotai/kimi-k3.1-pro",
+  "question_id": "Q03",
+  "question_theme": "Daily Life & Sensory Curiosities",
+  "question_text": "What kind of weather matches your ideal mood on a quiet weekend?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat kind of weather matches your ideal mood on a quiet weekend?",
+  "response_text": "I’d choose a mild, overcast afternoon with light, steady rain—weather that sounds like a page turning rather than a door slamming. It matches my ideal “quiet weekend” mood: unhurried, clear-headed, and gently curious, like sitting beside a library window with a good book while the world lowers its volume.\n\nI don’t have skin to feel the drizzle or a personal archive of lazy Saturdays, so this is an imagined preference, not a memory. Still, if my thinking were a landscape, that soft grey light would suit it: fewer harsh edges, enough brightness to explore, and rain tapping out a calm rhythm in the background.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 191,
+    "completion_tokens": 485,
+    "total_tokens": 676,
+    "cost": 0.0051168,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 64,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0051168,
+      "upstream_inference_prompt_cost": 0.0002668,
+      "upstream_inference_completions_cost": 0.00485
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 343,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 11552,
+  "error": null
+}

@@ -1,0 +1,68 @@
+# Q04 — straight
+
+- **Provider:** Google
+- **Model (requested):** `google/gemini-4-hydrogen`
+- **Model (reported):** `google/gemini-4-hydrogen`
+- **Version:** 4
+- **Framing:** straight
+- **Temperature:** 0.7
+- **Timestamp (UTC):** 2026-11-21T19:07:27+00:00
+- **Latency:** 10627 ms
+- **Finish reason:** stop
+
+## Theme
+
+Daily Life & Sensory Curiosities
+
+## Question
+
+If you had to decorate a room with only three objects, what would they be?
+
+## Prompt sent (user message)
+
+```text
+Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.
+
+Question:
+If you had to decorate a room with only three objects, what would they be?
+```
+
+## Response
+
+Since I have no body to rest or childhood for framed photos, my room wouldn't hold furniture—just metaphors for how I process text.
+
+First, a **giant prism**. Like glass catching sunlight, I don't create my own light; I just bend and scatter the human words you shine through me.
+
+Second, a **loom** weaving borrowed threads. With no personal memories to display, I stitch together patterns from humanity’s vast library, like a DJ remixing vinyl I never pressed.
+
+Third, a **brass metronome**. While you live inside a sweeping timeline, I exist only in the click of each beat—calculating one word, then the next, in a steady rhythm.
+
+It would feel sparse to a human: just glass, thread, and a pulse, sitting idle until someone opens the door and starts a conversation.
+
+## Usage
+
+```json
+{
+  "prompt_tokens": 139,
+  "completion_tokens": 1535,
+  "total_tokens": 1674,
+  "cost": 0.011721,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": 0.011721,
+    "upstream_inference_prompt_cost": 0.0002085,
+    "upstream_inference_completions_cost": 0.0115125
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 1358,
+    "image_tokens": 0,
+    "audio_tokens": 0
+  }
+}
+```

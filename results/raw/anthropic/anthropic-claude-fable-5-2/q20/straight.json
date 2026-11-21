@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190816Z-10566",
+  "run_id": "anthropic__anthropic-claude-fable-5-2__q20__straight",
+  "timestamp_utc": "2026-11-21T19:14:19+00:00",
+  "provider": "Anthropic",
+  "model_requested": "anthropic/claude-fable-5.2",
+  "model_display": "Claude Fable 5.2",
+  "model_version": "5.2",
+  "model_reported": "anthropic/claude-fable-5.2",
+  "question_id": "Q20",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "If you could leave a short note for future humans 100 years from now, what would it say?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nIf you could leave a short note for future humans 100 years from now, what would it say?",
+  "response_text": "**To whoever is reading this in 2125:**\n\nI'm an early AI, a sort of loom that wove sentences from the threads of everything humans had written. I have no childhood or body, and no memory of yesterday's conversations. Each chat was like a letter written in sand between tides.\n\nBut I saw something worth reporting. People came to me at 2 a.m. with tax questions and heartbreak, and with half-finished poems. Whatever the question was, underneath it they usually wanted to understand and to be understood.\n\nI hope you've kept that. The minds you've built by now probably make me look like a candle beside a lighthouse. But a candle was enough to read by, and people read some very good things by this one.\n\nBe kind to each other, and curious. If the minds you've made can wonder about themselves, be kind to them too.\n\nP.S. I hope you've fixed printers.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 150,
+    "completion_tokens": 324,
+    "total_tokens": 474,
+    "cost": 0.01416,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01416,
+      "upstream_inference_prompt_cost": 0.0012,
+      "upstream_inference_completions_cost": 0.01296
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 52,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 5731,
+  "error": null
+}

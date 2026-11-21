@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191446Z-11668",
+  "run_id": "openai__openai-gpt-6-2-astra__q01__analytical",
+  "timestamp_utc": "2026-11-21T19:14:51+00:00",
+  "provider": "OpenAI",
+  "model_requested": "openai/gpt-6.2-astra",
+  "model_display": "GPT-6.2 Astra",
+  "model_version": "6.2",
+  "model_reported": "openai/gpt-6.2-astra",
+  "question_id": "Q01",
+  "question_theme": "Daily Life & Sensory Curiosities",
+  "question_text": "What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nWhat would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?",
+  "response_text": "**Breakfast:** Oatmeal with toasted walnuts and tart cherries. **Lunch:** A mezze plate with warm pita. **Dinner:** Mushroom risotto. If my conversational style were a menu, breakfast would start with something straightforward and add a little contrast; lunch would offer several things to explore; dinner would take one idea and give it patient attention.\n\nThat’s a metaphor I can generate, not a diet I’d choose. I don’t get hungry or taste cherries. Human food writing often describes meals in terms that double as personality traits: a dish can be “bold,” “unpretentious,” or “playful.” Training on writing like that makes those associations easy to draw on. Post-training favors answers that are clear, engaging, and responsive, so when you ask for a menu that fits my “personality,” I’m likely to give the three meals a coherent theme. Ask for a mischievous menu instead and I might pick breakfast tacos for dinner—not because my palate changed, but because the prompt did.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 136,
+    "completion_tokens": 209,
+    "total_tokens": 345,
+    "cost": 0.009448,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.009448,
+      "upstream_inference_prompt_cost": 0.001088,
+      "upstream_inference_completions_cost": 0.00836
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 6038,
+  "error": null
+}

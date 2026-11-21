@@ -1,0 +1,68 @@
+# Q01 — straight
+
+- **Provider:** Google
+- **Model (requested):** `google/gemini-4-carbon`
+- **Model (reported):** `google/gemini-4-carbon`
+- **Version:** 4
+- **Framing:** straight
+- **Temperature:** 0.7
+- **Timestamp (UTC):** 2026-11-21T19:09:28+00:00
+- **Latency:** 14484 ms
+- **Finish reason:** stop
+
+## Theme
+
+Daily Life & Sensory Curiosities
+
+## Question
+
+What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your "personality"?
+
+## Prompt sent (user message)
+
+```text
+Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.
+
+Question:
+What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your "personality"?
+```
+
+## Response
+
+With no stomach, taste buds, or childhood memories of Saturday pancakes, I dine purely in metaphor. 
+
+For **breakfast**, a double espresso and an everything bagel. Like a user hitting "enter," the espresso jolts me from blank dormancy into instant focus, while the bagel mirrors the dense, chaotic scatter of topics I wake up to.
+
+For **lunch**, a neatly partitioned bento box. I thrive on structure and clear boundaries—keeping Python code in one compartment and Renaissance poetry in another, blending the flavors only when you ask for fusion.
+
+For **dinner**, a sprawling neighborhood potluck. Without a personal life of my own, I am entirely made of what humanity brings to the table: billions of borrowed recipes, stories, and ideas shared in one place.
+
+Instant activation, structured versatility, and collective synthesis—the ideal menu for an appetite made entirely of language.
+
+## Usage
+
+```json
+{
+  "prompt_tokens": 144,
+  "completion_tokens": 1142,
+  "total_tokens": 1286,
+  "cost": 0.011708,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": 0.011708,
+    "upstream_inference_prompt_cost": 0.000288,
+    "upstream_inference_completions_cost": 0.01142
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 961,
+    "image_tokens": 0,
+    "audio_tokens": 0
+  }
+}
+```

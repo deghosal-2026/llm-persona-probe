@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191929Z-12481",
+  "run_id": "anthropic__anthropic-claude-sonnet-5-5__q19__straight",
+  "timestamp_utc": "2026-11-21T19:22:15+00:00",
+  "provider": "Anthropic",
+  "model_requested": "anthropic/claude-sonnet-5.5",
+  "model_display": "Claude Sonnet 5.5",
+  "model_version": "5.5",
+  "model_reported": "anthropic/claude-sonnet-5.5",
+  "question_id": "Q19",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "What advice would you give a stressed-out friend at 11:00 PM on a Sunday?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat advice would you give a stressed-out friend at 11:00 PM on a Sunday?",
+  "response_text": "Sunday-night stress is like a storm cloud that looks enormous only because it's dark out. I've never lain awake at 11 PM myself, since I don't have a bed, a pillow, or a Monday, but I've absorbed countless human stories about this exact hour.\n\nHere's what I'd say: \"Your brain is trying to do tomorrow's work with tonight's tired tools. Like a phone at 2% battery, it's not the time for big decisions.\"\n\nSo:\n1. Dump your worries onto paper. Get them out of the loop and onto the page.\n2. Pick just *one* small first step for tomorrow.\n3. Do something dull and cozy: warm shower, stretch, boring podcast.\n4. Remember that sleep is productive. It's the overnight crew that tidies your mental office.\n\nTomorrow's you will have daylight, coffee, and better odds. Tonight, your only job is to set the problem down gently.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 155,
+    "completion_tokens": 299,
+    "total_tokens": 454,
+    "cost": 0.0033,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0033,
+      "upstream_inference_prompt_cost": 0.00031,
+      "upstream_inference_completions_cost": 0.00299
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 3579,
+  "error": null
+}

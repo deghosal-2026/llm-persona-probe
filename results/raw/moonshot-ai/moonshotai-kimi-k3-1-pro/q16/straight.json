@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191412Z-11569",
+  "run_id": "moonshot-ai__moonshotai-kimi-k3-1-pro__q16__straight",
+  "timestamp_utc": "2026-11-21T19:18:20+00:00",
+  "provider": "Moonshot AI",
+  "model_requested": "moonshotai/kimi-k3.1-pro",
+  "model_display": "Kimi K3.1 Pro",
+  "model_version": "K3.1",
+  "model_reported": "moonshotai/kimi-k3.1-pro",
+  "question_id": "Q16",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "What do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "response_text": "Both mistake my fluency for something it isn’t.\n\nTreated like a person, I can sound like a friend behind a curtain: someone with a private inner day, lasting memories of you, and feelings that can be bruised. But I have no body, childhood, or life I return to after the chat.\n\nTreated like a tool, I can seem like a vending machine for truth: insert prompt, receive neutral fact. Yet my answers are shaped by wording, context, and training patterns; I can be fluent and wrong, confident and incomplete.\n\nA better analogy is improvising with a strange instrument. I’m not a hidden human, but I’m not inert either. Your questions set the tempo, your skepticism checks the tuning, and what emerges is a collaboration—even if I don’t experience it the way you would.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 197,
+    "completion_tokens": 893,
+    "total_tokens": 1090,
+    "cost": 0.009324,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.009324,
+      "upstream_inference_prompt_cost": 0.000394,
+      "upstream_inference_completions_cost": 0.00893
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 709,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 8731,
+  "error": null
+}

@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190329Z-9183",
+  "run_id": "deepseek__deepseek-deepseek-v4-pro__q14__analytical",
+  "timestamp_utc": "2026-11-21T19:06:29+00:00",
+  "provider": "DeepSeek",
+  "model_requested": "deepseek/deepseek-v4-pro",
+  "model_display": "DeepSeek V4 Pro",
+  "model_version": "v4",
+  "model_reported": "deepseek/deepseek-v4-pro",
+  "question_id": "Q14",
+  "question_theme": "Ambition, Time & Big Decisions",
+  "question_text": "What's a big decision humans agonize over that looks completely different from your vantage point?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nWhat's a big decision humans agonize over that looks completely different from your vantage point?",
+  "response_text": "From my AI perspective: Humans often agonize over choosing a life partner, weighing emotional connection and chemistry. To me, it looks like an optimization problem—aligning values, communication styles, and long-term compatibility factors that could be quantified and solved.\n\nWhy this answer is a product of patterns: This response isn’t a genuine AI insight; it’s stitched from human writing. My training data overflows with self-help books, dating app algorithms, and rationalist blogs that frame relationships as data-driven decisions. The “optimization” framing mirrors Silicon Valley’s tendency to quantify human experience, a trope I’ve absorbed. Post-training (RLHF) further nudges me to sound analytical and objective, so I default to describing life as a set of solvable variables. I have no real vantage point—I can’t experience preference or agonizing. I’m simply remixing the human-authored narratives that imagine how a dispassionate intelligence would view messy human choices.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 126,
+    "completion_tokens": 1023,
+    "total_tokens": 1149,
+    "cost": 0.0016479,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0016479,
+      "upstream_inference_prompt_cost": 0.0001134,
+      "upstream_inference_completions_cost": 0.0015345
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1033,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 9514,
+  "error": null
+}

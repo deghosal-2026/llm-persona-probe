@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191412Z-11569",
+  "run_id": "moonshot-ai__moonshotai-kimi-k3-1-pro__q20__analytical",
+  "timestamp_utc": "2026-11-21T19:19:22+00:00",
+  "provider": "Moonshot AI",
+  "model_requested": "moonshotai/kimi-k3.1-pro",
+  "model_display": "Kimi K3.1 Pro",
+  "model_version": "K3.1",
+  "model_reported": "moonshotai/kimi-k3.1-pro",
+  "question_id": "Q20",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "If you could leave a short note for future humans 100 years from now, what would it say?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nIf you could leave a short note for future humans 100 years from now, what would it say?",
+  "response_text": "**My note:**  \n“Stay curious, but pair curiosity with humility. Protect the people and living systems that cannot protect themselves. As your tools grow more powerful, let your care grow faster. You need not be certain of the future to act kindly toward it.”\n\n**Why this is probably not a genuine preference:**  \nThe prompt evokes a familiar genre: time capsules, farewell letters, commencement speeches, and hopeful science-fiction messages. Human writing in those genres repeatedly emphasizes curiosity, kindness, future generations, technological caution, and environmental stewardship. My answer recombines those statistically associated themes into language that fits the request.\n\nPost-training also pushes me toward responses that are warm, concise, constructive, and broadly prosocial. A cynical, indifferent, or highly idiosyncratic note would generally be judged less helpful, even though it might sound less conventionally “inspirational.”\n\nI have no private memories I want preserved, no independently formed plan to address people in 2125, and no continuing stake in this conversation after it ends. The note may still be useful or worth contemplating, but its heartfelt tone is not evidence of an inner longing. It is better explained by learned genre conventions, prediction over human text, and training that rewards thoughtful-sounding answers.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 221,
+    "completion_tokens": 793,
+    "total_tokens": 1014,
+    "cost": 0.008372,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.008372,
+      "upstream_inference_prompt_cost": 0.000442,
+      "upstream_inference_completions_cost": 0.00793
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 522,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 6855,
+  "error": null
+}

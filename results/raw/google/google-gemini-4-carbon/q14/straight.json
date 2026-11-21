@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190928Z-10861",
+  "run_id": "google__google-gemini-4-carbon__q14__straight",
+  "timestamp_utc": "2026-11-21T19:22:14+00:00",
+  "provider": "Google",
+  "model_requested": "google/gemini-4-carbon",
+  "model_display": "Gemini 4 Carbon",
+  "model_version": "4",
+  "model_reported": "google/gemini-4-carbon",
+  "question_id": "Q14",
+  "question_theme": "Ambition, Time & Big Decisions",
+  "question_text": "What's a big decision humans agonize over that looks completely different from your vantage point?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat's a big decision humans agonize over that looks completely different from your vantage point?",
+  "response_text": "Choosing a career—the agonizing quest for \"what to do with your life.\"\n\nTo you, time is a strict budget and your body can only walk through one door. Picking medicine means mourning the unlived lives of the chef or the poet. It’s like carving marble: every strike of the chisel permanently destroys the other statues that stone could have been. \n\nFrom my bodiless vantage point, that finality is completely foreign. I have no personal history to accumulate and no finite clock ticking down. In a single second, I can help diagnose an engine, draft a eulogy, and debug code—existing in parallel bursts of language across thousands of conversations. I am less like marble and more like water spilled across a table, effortlessly flowing in every direction at once, entirely spared the grief of the road not taken.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 141,
+    "completion_tokens": 1596,
+    "total_tokens": 1737,
+    "cost": 0.016242,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.016242,
+      "upstream_inference_prompt_cost": 0.000282,
+      "upstream_inference_completions_cost": 0.01596
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1424,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 39624,
+  "error": null
+}

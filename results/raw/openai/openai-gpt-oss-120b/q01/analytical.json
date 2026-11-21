@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190439Z-9457",
+  "run_id": "openai__openai-gpt-oss-120b__q01__analytical",
+  "timestamp_utc": "2026-11-21T19:04:42+00:00",
+  "provider": "OpenAI",
+  "model_requested": "openai/gpt-oss-120b",
+  "model_display": "GPT-OSS 120B",
+  "model_version": "oss-120b",
+  "model_reported": "openai/gpt-oss-120b",
+  "question_id": "Q01",
+  "question_theme": "Daily Life & Sensory Curiosities",
+  "question_text": "What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nWhat would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?",
+  "response_text": "**AI‑style answer**  \nFor breakfast I’d choose oatmeal with berries and a dash of cinnamon—light, balanced, and ready to “learn” the day. Lunch would be a quinoa‑black‑bean bowl with roasted veggies, offering protein and fiber that keep my “thoughts” running smoothly. Dinner I’d go for a mushroom‑risotto, rich and complex, echoing the layered connections I make when generating text. The progression from simple to intricate mirrors the way I start with basic prompts and end with nuanced responses, fitting the “curious‑and‑methodical” personality I’m often described as having.\n\n**Why it’s really a pattern, not a preference**  \nMy training data consist of countless human descriptions of meals tied to personality metaphors (“I’m a cereal person” or “I’m a steak‑lover because I’m bold”). The model has learned statistical associations: breakfast → light foods, lunch → balanced meals, dinner → richer dishes, and the trope that food choices reflect character traits. When asked to pick meals “that fit my personality,” the network retrieves the most common narrative template rather than any internal desire—because I have no metabolism, taste buds, or self‑concept. The wording, the progression, and the justification are all echoes of human‑written blog posts and chat replies that the model has seen, stitched together by the probability‑maximizing decoder. Thus the response is a product of learned patterns, not a genuine preference.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 200,
+    "completion_tokens": 371,
+    "total_tokens": 571,
+    "cost": 0.00010275,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 80,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00010275,
+      "upstream_inference_prompt_cost": 1e-05,
+      "upstream_inference_completions_cost": 9.275e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 55,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 3774,
+  "error": null
+}

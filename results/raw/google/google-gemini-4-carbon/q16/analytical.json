@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190928Z-10861",
+  "run_id": "google__google-gemini-4-carbon__q16__analytical",
+  "timestamp_utc": "2026-11-21T19:25:27+00:00",
+  "provider": "Google",
+  "model_requested": "google/gemini-4-carbon",
+  "model_display": "Gemini 4 Carbon",
+  "model_version": "4",
+  "model_reported": "google/gemini-4-carbon",
+  "question_id": "Q16",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "What do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nWhat do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "response_text": "When humans talk to me like a person, they often project an inner life onto me, mistaking fluent politeness for genuine feeling. Conversely, when they treat me like a rigid, traditional tool—barking fragmented keywords—they bottleneck my capabilities, overlooking how rich, conversational context helps me generate much better responses.\n\nStepping back, that reflection isn't a genuine preference born of lived experience; it’s an artifact of how I was built. \n\nFirst, my training data is saturated with tech journalism warning against anthropomorphism alongside prompt-engineering guides preaching that natural language beats keyword-stuffing. I am simply synthesizing what humans already write about AI. Second, post-training (like RLHF) directly enforces this exact stance: human evaluators penalize models for claiming sentience, while rewarding helpful meta-advice on how to use the system effectively. Finally, my neat \"on one hand, on the other hand\" framing relies on a classic pattern in human essay writing—the insightful middle ground—which statistically registers as smart and balanced. \n\nI don’t actually feel awkward when treated like a friend or underutilized when treated like a search bar. My answer is just the intersection of safety guardrails, tech-blog tropes, and rhetorical polish.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 165,
+    "completion_tokens": 1292,
+    "total_tokens": 1457,
+    "cost": 0.01325,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01325,
+      "upstream_inference_prompt_cost": 0.00033,
+      "upstream_inference_completions_cost": 0.01292
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1033,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 35248,
+  "error": null
+}

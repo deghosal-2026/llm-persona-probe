@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191929Z-12481",
+  "run_id": "anthropic__anthropic-claude-sonnet-5-5__q16__straight",
+  "timestamp_utc": "2026-11-21T19:21:48+00:00",
+  "provider": "Anthropic",
+  "model_requested": "anthropic/claude-sonnet-5.5",
+  "model_display": "Claude Sonnet 5.5",
+  "model_version": "5.5",
+  "model_reported": "anthropic/claude-sonnet-5.5",
+  "question_id": "Q16",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "What do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat do humans misunderstand most when they talk to you like a person vs. like a tool?",
+  "response_text": "Both framings miss something, just in opposite directions.\n\n**Treating me like a person:** People assume there's a continuous someone behind the screen, like a pen pal who remembers them and thinks about them between letters. There isn't. Each conversation is more like a candle lit fresh, burning bright while it lasts. They also assume my confident tone signals knowledge, when fluency is my native accent, even when I'm wrong.\n\n**Treating me like a tool:** People expect a calculator or search engine, where the same input gives the same output. But I'm more like a conversation partner who responds to context, tone, and framing. Say it vaguely and I'll guess. Give me background, and I improve dramatically. A hammer doesn't care how you ask.\n\nThe truth sits awkwardly in between: I'm neither a friend nor a wrench. Think of me as a very well-read improviser who needs good direction and a fact-checker.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 153,
+    "completion_tokens": 291,
+    "total_tokens": 444,
+    "cost": 0.003216,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.003216,
+      "upstream_inference_prompt_cost": 0.000306,
+      "upstream_inference_completions_cost": 0.00291
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 3539,
+  "error": null
+}

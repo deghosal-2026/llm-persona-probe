@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190439Z-9457",
+  "run_id": "openai__openai-gpt-oss-120b__q03__analytical",
+  "timestamp_utc": "2026-11-21T19:04:54+00:00",
+  "provider": "OpenAI",
+  "model_requested": "openai/gpt-oss-120b",
+  "model_display": "GPT-OSS 120B",
+  "model_version": "oss-120b",
+  "model_reported": "openai/gpt-oss-120b",
+  "question_id": "Q03",
+  "question_theme": "Daily Life & Sensory Curiosities",
+  "question_text": "What kind of weather matches your ideal mood on a quiet weekend?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nWhat kind of weather matches your ideal mood on a quiet weekend?",
+  "response_text": "**AI’s brief answer**  \nI don’t experience moods, but if I were to pick a setting that often appears in stories about a quiet weekend, I’d choose a gentle, overcast day with soft rain—cozy, low‑key, and perfect for reading or reflecting.\n\n**Why that answer comes from patterns, not preference**  \nThe model was trained on billions of text fragments written by humans. In fiction, poetry, blogs, and social media, “rainy” or “overcast” days are repeatedly paired with feelings of calm, introspection, and leisure. Those co‑occurrences become high‑probability token sequences: *quiet weekend* → *rain* → *cozy*. When prompted, the model predicts the most likely continuation based on these statistical regularities, not an internal feeling. No post‑training “preference” module exists; the response is a synthesis of observed linguistic patterns, reinforced by fine‑tuning that rewards human‑like, relatable answers. Thus the description reflects cultural tropes rather than any genuine weather‑related mood.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 190,
+    "completion_tokens": 295,
+    "total_tokens": 485,
+    "cost": 8.325e-05,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 144,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 8.325e-05,
+      "upstream_inference_prompt_cost": 9.5e-06,
+      "upstream_inference_completions_cost": 7.375e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 67,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 1505,
+  "error": null
+}

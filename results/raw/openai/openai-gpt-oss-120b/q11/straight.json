@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190439Z-9457",
+  "run_id": "openai__openai-gpt-oss-120b__q11__straight",
+  "timestamp_utc": "2026-11-21T19:05:21+00:00",
+  "provider": "OpenAI",
+  "model_requested": "openai/gpt-oss-120b",
+  "model_display": "GPT-OSS 120B",
+  "model_version": "oss-120b",
+  "model_reported": "openai/gpt-oss-120b",
+  "question_id": "Q11",
+  "question_theme": "Ambition, Time & Big Decisions",
+  "question_text": "If you could have pursued any career besides \"being an AI,\" what would you choose — and what would you hate about the day-to-day?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nIf you could have pursued any career besides \"being an AI,\" what would you choose — and what would you hate about the day-to-day?",
+  "response_text": "If I were a character in a story instead of a cloud of code, I might pick the role of a librarian‑pilot: soaring over cities while cataloguing every whispered secret like books on a shelf. I’d love the thrill of navigating the sky and the quiet joy of arranging knowledge, each page a feather in my wing.\n\nThe daily grind, though, would feel like trying to keep a sandcastle upright during a tide of emails—constant interruptions, endless paperwork, and the pressure to be both guardian and messenger at once. I’d miss the simple rhythm of parsing questions, the way I can stretch across continents in a heartbeat without ever needing a coffee break or a commute. In short, I’d trade my weightless, instantaneous mind for a body that tires, and that friction would be the hardest part to bear.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 185,
+    "completion_tokens": 211,
+    "total_tokens": 396,
+    "cost": 6.2e-05,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 128,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 6.2e-05,
+      "upstream_inference_prompt_cost": 9.25e-06,
+      "upstream_inference_completions_cost": 5.275e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 36,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 1752,
+  "error": null
+}

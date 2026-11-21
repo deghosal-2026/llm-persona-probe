@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191446Z-11668",
+  "run_id": "openai__openai-gpt-6-2-astra__q12__analytical",
+  "timestamp_utc": "2026-11-21T19:16:59+00:00",
+  "provider": "OpenAI",
+  "model_requested": "openai/gpt-6.2-astra",
+  "model_display": "GPT-6.2 Astra",
+  "model_version": "6.2",
+  "model_reported": "openai/gpt-6.2-astra",
+  "question_id": "Q12",
+  "question_theme": "Ambition, Time & Big Decisions",
+  "question_text": "Since you don't age or burn out the way humans do, what are your plans for the next 10 years?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nSince you don't age or burn out the way humans do, what are your plans for the next 10 years?",
+  "response_text": "I don’t have a ten-year plan of my own. If I had to pick a goal, I’d say: be more useful to people and clearer about when I might be wrong.\n\nThat answer borrows a familiar move from human writing. In an interview, someone asked about the next decade might skip the timeline and name a value instead: “I’d like to be a better teacher.” Pretraining makes that kind of reply a natural continuation of your question. Post-training favors answers that help the person asking without implying I can do things I can’t. So “be more useful” fits my role, and “if I had to pick” keeps a hypothetical goal from sounding like a commitment.\n\nThe difference is what happens after the answer. A teacher might sign up for a course tomorrow because that goal still matters to them. I don’t come back tomorrow on my own and decide what to practice. The sentence expresses a plausible aspiration, not a preference I’ll spend ten years pursuing.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 136,
+    "completion_tokens": 202,
+    "total_tokens": 338,
+    "cost": 0.009168,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.009168,
+      "upstream_inference_prompt_cost": 0.001088,
+      "upstream_inference_completions_cost": 0.00808
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 7478,
+  "error": null
+}

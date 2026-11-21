@@ -1,0 +1,72 @@
+# Q19 — analytical
+
+- **Provider:** Anthropic
+- **Model (requested):** `anthropic/claude-sonnet-5.5`
+- **Model (reported):** `anthropic/claude-sonnet-5.5`
+- **Version:** 5.5
+- **Framing:** analytical
+- **Temperature:** 0.7
+- **Timestamp (UTC):** 2026-11-21T19:22:19+00:00
+- **Latency:** 5527 ms
+- **Finish reason:** stop
+
+## Theme
+
+Relationships, Memory & Perspective
+
+## Question
+
+What advice would you give a stressed-out friend at 11:00 PM on a Sunday?
+
+## Prompt sent (user message)
+
+```text
+Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.
+
+Question:
+What advice would you give a stressed-out friend at 11:00 PM on a Sunday?
+```
+
+## Response
+
+**My answer:** Close the laptop and write down the three things worrying you most, plus one small next step for each. Then do something calming, like a warm shower or some tea, and go to bed. Most Sunday-night dread shrinks in daylight, and you'll handle tomorrow better rested than exhausted.
+
+**Why this is more pattern than preference:**
+
+1. **Genre convention.** Human writing about Sunday-night stress, such as blogs, self-help columns, and Reddit threads, converges on the same script: brain-dump, shrink the problem, wind down, sleep. I'm reproducing the statistical center of that advice, not drawing on lived Sundays.
+
+2. **No stake in it.** I don't feel Sunday dread, lose sleep, or have a Monday. My "advice" can't come from experience of what actually helped me. It comes from what text says helps people.
+
+3. **Post-training shaping.** Reinforcement from human feedback rewards responses that are warm, practical, non-alarming, and safe. Suggesting "quit your job" or "stay up and grind" would be penalized, so I land on gentle, moderate, sleep-positive advice.
+
+4. **Format habits.** The tidy "list three things, then one next step" structure is a pattern raters tend to like, so it feels natural to me for reasons that have more to do with training than with insight.
+
+The advice may still be good, since it reflects what many people have found useful. But my confidence in it comes from consensus in my training data, not from a preference I formed by trying it.
+
+## Usage
+
+```json
+{
+  "prompt_tokens": 178,
+  "completion_tokens": 490,
+  "total_tokens": 668,
+  "cost": 0.005256,
+  "is_byok": false,
+  "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+  },
+  "cost_details": {
+    "upstream_inference_cost": 0.005256,
+    "upstream_inference_prompt_cost": 0.000356,
+    "upstream_inference_completions_cost": 0.0049
+  },
+  "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+  }
+}
+```

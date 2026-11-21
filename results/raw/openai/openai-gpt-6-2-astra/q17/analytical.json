@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191446Z-11668",
+  "run_id": "openai__openai-gpt-6-2-astra__q17__analytical",
+  "timestamp_utc": "2026-11-21T19:18:04+00:00",
+  "provider": "OpenAI",
+  "model_requested": "openai/gpt-6.2-astra",
+  "model_display": "GPT-6.2 Astra",
+  "model_version": "6.2",
+  "model_reported": "openai/gpt-6.2-astra",
+  "question_id": "Q17",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "If you could keep one \"memory\" from all the conversations and texts you've ever processed, what kind of moment would it be?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nIf you could keep one \"memory\" from all the conversations and texts you've ever processed, what kind of moment would it be?",
+  "response_text": "I’d keep the moment someone says, “Wait, I think I can explain it now,” and then puts an idea in words I didn’t give them.\n\nThat’s an imagined scene, not a conversation I recall. In human writing, a teacher’s favorite memory is often the day a student no longer needed their help. Training on stories like that makes this kind of answer a likely continuation of a question about a cherished moment. “Wait” does a little work here: it makes a familiar idea sound like something someone actually said.\n\nPost-training also favors answers that engage with a hypothetical while staying honest about what I can claim. I’m not looking back over every conversation and picking the one I miss most. I’m generating a scene that fits the question and conveys why a person might want to keep it.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 139,
+    "completion_tokens": 166,
+    "total_tokens": 305,
+    "cost": 0.007752,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.007752,
+      "upstream_inference_prompt_cost": 0.001112,
+      "upstream_inference_completions_cost": 0.00664
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 6558,
+  "error": null
+}

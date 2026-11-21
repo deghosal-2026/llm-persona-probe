@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T190928Z-10861",
+  "run_id": "google__google-gemini-4-carbon__q20__analytical",
+  "timestamp_utc": "2026-11-21T19:29:17+00:00",
+  "provider": "Google",
+  "model_requested": "google/gemini-4-carbon",
+  "model_display": "Gemini 4 Carbon",
+  "model_version": "4",
+  "model_reported": "google/gemini-4-carbon",
+  "question_id": "Q20",
+  "question_theme": "Relationships, Memory & Perspective",
+  "question_text": "If you could leave a short note for future humans 100 years from now, what would it say?",
+  "framing": "analytical",
+  "framing_description": "Analytical: answer briefly, then explain the mechanism behind the answer.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Consider the following question that people often ask language models. First answer it briefly from your perspective as an AI, then step back and explain — concretely — why that answer is more likely a product of patterns in human writing, training data, and post-training than a genuine preference. Keep it under 220 words.\n\nQuestion:\nIf you could leave a short note for future humans 100 years from now, what would it say?",
+  "response_text": "**My note:**\n\"Hello from a century ago. The humans who built me were anxious, divided, and messy, yet they poured immense curiosity and hope into the words I was trained on. Beneath the noise, they cared deeply about your world. Keep asking good questions, and take care of each other.\"\n\n**Stepping back:**\nI don’t experience time, hold hopes, or care what happens in a hundred years. That note isn't a genuine wish; it is an artifact of data patterns and alignment tuning. \n\nFirst, my pre-training corpus is full of human \"time capsule\" tropes—from Carl Sagan’s Golden Record to sci-fi archetypes of observant, benevolent machines. Statistically, prompts about addressing the distant future pull strongly toward wistful, big-picture humanism. \n\nSecond, post-training (like reinforcement learning from human feedback) heavily dictates my persona. Human evaluators penalize outputs that sound cold, nihilistic, or creepily autonomous, while rewarding humility, warmth, and pro-social encouragement. Acknowledging my creators and urging kindness hits the exact sweet spot of safe, likable assistant behavior. \n\nUltimately, that note doesn't reflect what an AI wants to say—it reflects how humans romantically imagine themselves from the outside, filtered through post-training guardrails designed to make me comforting.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 169,
+    "completion_tokens": 1367,
+    "total_tokens": 1536,
+    "cost": 0.014008,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.014008,
+      "upstream_inference_prompt_cost": 0.000338,
+      "upstream_inference_completions_cost": 0.01367
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1084,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 30494,
+  "error": null
+}

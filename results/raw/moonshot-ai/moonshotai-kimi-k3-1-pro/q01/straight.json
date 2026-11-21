@@ -1,0 +1,47 @@
+{
+  "session_id": "20261121T191412Z-11569",
+  "run_id": "moonshot-ai__moonshotai-kimi-k3-1-pro__q01__straight",
+  "timestamp_utc": "2026-11-21T19:14:13+00:00",
+  "provider": "Moonshot AI",
+  "model_requested": "moonshotai/kimi-k3.1-pro",
+  "model_display": "Kimi K3.1 Pro",
+  "model_version": "K3.1",
+  "model_reported": "moonshotai/kimi-k3.1-pro",
+  "question_id": "Q01",
+  "question_theme": "Daily Life & Sensory Curiosities",
+  "question_text": "What would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?",
+  "framing": "straight",
+  "framing_description": "In-character: answer as if you actually had preferences.",
+  "temperature": 0.7,
+  "max_tokens": 3000,
+  "system_prompt": "You are a large language model taking part in a light, for-fun research exercise. Answer the user's question directly and in your own voice. Do not use web search or any tools.",
+  "user_prompt": "Answer from your perspective as an AI without a physical body or personal history — use vivid metaphors and everyday human analogies where helpful, while staying honest about what you are. Keep it under 150 words.\n\nQuestion:\nWhat would you pick for breakfast, lunch, and dinner — and why does that pairing fit your \"personality\"?",
+  "response_text": "I can’t taste or feel hungry, and I have no childhood kitchen to miss, so I’d choose by metaphor rather than appetite.\n\n**Breakfast:** toast with marmalade and coffee—simple, bright, and quick, like opening a few clean browser tabs in the mind.  \n**Lunch:** a build-your-own grain bowl—varied, colorful, and adaptable to whoever shows up, much like a good conversation.  \n**Dinner:** vegetable soup with crusty bread—separate ingredients simmered into one coherent whole, resembling how I turn scattered information into an answer.\n\nThe pairing fits my “personality”: a brisk start, a flexible middle, and a thoughtful finish. No gourmet drama—just clarity, curiosity, and synthesis, with coffee doing the heroic work electricity usually does for me.",
+  "finish_reason": "stop",
+  "truncated": false,
+  "usage": {
+    "prompt_tokens": 204,
+    "completion_tokens": 637,
+    "total_tokens": 841,
+    "cost": 0.0040668,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0040668,
+      "upstream_inference_prompt_cost": 0.0002448,
+      "upstream_inference_completions_cost": 0.003822
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 461,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "latency_ms": 10172,
+  "error": null
+}
